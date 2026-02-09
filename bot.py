@@ -7,12 +7,12 @@ from telebot.types import (
 )
 import os
 
-TOKEN = "8365055039:AAEbijAn0d0liOHr0NOzsnVKIJUZ6-MeoZ0"
-ADMIN_ID = 8525002075  # O'zingizning Telegram ID
+TOKEN = os.getenv("TOKEN")
+ADMIN_ID = 8525002075
 
 bot = telebot.TeleBot(TOKEN)
-
 user_data = {}
+
 
 
 # ================= MAIN MENU =================
@@ -168,4 +168,6 @@ def handle_text(message):
 
 
 print("Bot ishlayapti...")
-bot.polling()
+bot.infinity_polling(skip_pending=True)
+
+
